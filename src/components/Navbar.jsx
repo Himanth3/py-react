@@ -1,25 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon, Home, BookOpen, BrainCircuit, FolderGit2, Download, Mail } from 'lucide-react';
+import { Menu, X, Home, BookOpen, BrainCircuit, FolderGit2, Download, Mail } from 'lucide-react';
 import './Navbar.css'; // We'll create this CSS file
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [theme, setTheme] = useState('dark');
     const location = useLocation();
 
     useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        setTheme(savedTheme);
-        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.setAttribute('data-theme', 'dark');
     }, []);
-
-    const toggleTheme = () => {
-        const newTheme = theme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme);
-    };
 
     const navLinks = [
         { name: 'Home', path: '/', icon: <Home size={20} /> },
@@ -49,9 +39,6 @@ const Navbar = () => {
                             <span>{link.name}</span>
                         </Link>
                     ))}
-                    <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle Theme">
-                        {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-                    </button>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -74,7 +61,6 @@ const Navbar = () => {
                             <span>{link.name}</span>
                         </Link>
                     ))}
-                    
                 </div>
             )}
         </nav>
