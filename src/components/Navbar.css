@@ -75,9 +75,7 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
-[data-theme='light'] .theme-toggle:hover {
-    background: rgba(0, 0, 0, 0.05);
-}
+
 
 .mobile-only {
     display: none;
@@ -114,9 +112,7 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    [data-theme='light'] .mobile-menu {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
+  
 
     .mobile-nav-link {
         display: flex;
@@ -147,7 +143,5 @@
         cursor: pointer;
     }
 
-    [data-theme='light'] .mobile-theme-toggle {
-        border: 1px solid rgba(0, 0, 0, 0.1);
-    }
+   
 }
